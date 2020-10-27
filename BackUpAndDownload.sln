@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5EBD3F81-0F56-4C7A-BE4A-0ECA3CF0B654}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackUpServer", "src\BackUpServer\BackUpServer.csproj", "{A547C400-9781-46C0-9695-67E74B5D40AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwatServer", "src\SwatServer\SwatServer.csproj", "{EE4AB694-746F-47CA-ABB0-D053F48AEFFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A547C400-9781-46C0-9695-67E74B5D40AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A547C400-9781-46C0-9695-67E74B5D40AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A547C400-9781-46C0-9695-67E74B5D40AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A547C400-9781-46C0-9695-67E74B5D40AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE4AB694-746F-47CA-ABB0-D053F48AEFFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE4AB694-746F-47CA-ABB0-D053F48AEFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE4AB694-746F-47CA-ABB0-D053F48AEFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE4AB694-746F-47CA-ABB0-D053F48AEFFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{A547C400-9781-46C0-9695-67E74B5D40AC} = {5EBD3F81-0F56-4C7A-BE4A-0ECA3CF0B654}
+		{EE4AB694-746F-47CA-ABB0-D053F48AEFFF} = {5EBD3F81-0F56-4C7A-BE4A-0ECA3CF0B654}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9C6CD29-32C3-45C1-8B0B-EFB952BD1236}
