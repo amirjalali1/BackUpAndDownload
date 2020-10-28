@@ -7,15 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5EBD3F81-0F5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwatServer", "src\SwatServer\SwatServer.csproj", "{EE4AB694-746F-47CA-ABB0-D053F48AEFFF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packages", "packages", "{0CCE6D60-4091-4F11-83EE-67A3EDF77974}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BD.packages", "BD.packages", "{0CCE6D60-4091-4F11-83EE-67A3EDF77974}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService", "packages\WorkerService\WorkerService.csproj", "{37482359-4A16-4375-BC4F-B910EC33B424}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BD.WorkerService", "packages\WorkerService\BD.WorkerService.csproj", "{37482359-4A16-4375-BC4F-B910EC33B424}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "job", "job", "{46C871AB-4117-4298-BBF1-9515523F3A1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Job.Backup", "job\Job.Backup\Job.Backup.csproj", "{DB3D3FE4-6530-4B61-BDD9-3ACB2AECF9A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Job.Backup", "job\Job.Backup\Job.Backup.csproj", "{DB3D3FE4-6530-4B61-BDD9-3ACB2AECF9A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Job.Download", "job\Job.Download\Job.Download.csproj", "{CB7BD4CA-CD8D-4AEB-BC7B-F352C128AB68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Job.Download", "job\Job.Download\Job.Download.csproj", "{CB7BD4CA-CD8D-4AEB-BC7B-F352C128AB68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
