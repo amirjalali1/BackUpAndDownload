@@ -17,10 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackupAndDownload.packages"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupAndDownload.WorkerService", "BackupAndDownload.packages\BackupAndDownload.WorkerService\BackupAndDownload.WorkerService.csproj", "{69CA2F90-EABE-4D13-BF01-27C2E27375DE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backupdownload", "backupdownload", "{8EE759AA-CA4D-439E-BB16-CEB7DD5F3913}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "backupdownload\ClassLibrary1\ClassLibrary1.csproj", "{23FB290A-D3BB-4F34-98AA-E83BA587E5F6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,10 +39,6 @@ Global
 		{69CA2F90-EABE-4D13-BF01-27C2E27375DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69CA2F90-EABE-4D13-BF01-27C2E27375DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69CA2F90-EABE-4D13-BF01-27C2E27375DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{23FB290A-D3BB-4F34-98AA-E83BA587E5F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23FB290A-D3BB-4F34-98AA-E83BA587E5F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23FB290A-D3BB-4F34-98AA-E83BA587E5F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23FB290A-D3BB-4F34-98AA-E83BA587E5F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,7 +48,6 @@ Global
 		{DB3D3FE4-6530-4B61-BDD9-3ACB2AECF9A2} = {46C871AB-4117-4298-BBF1-9515523F3A1D}
 		{CB7BD4CA-CD8D-4AEB-BC7B-F352C128AB68} = {46C871AB-4117-4298-BBF1-9515523F3A1D}
 		{69CA2F90-EABE-4D13-BF01-27C2E27375DE} = {AB347DCD-C6F3-44D2-AF73-FF7F4ADE61ED}
-		{23FB290A-D3BB-4F34-98AA-E83BA587E5F6} = {8EE759AA-CA4D-439E-BB16-CEB7DD5F3913}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9C6CD29-32C3-45C1-8B0B-EFB952BD1236}
