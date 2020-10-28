@@ -59,8 +59,11 @@ namespace Job.Download
                 {
                     if(item.Modified > DateTime.Now.AddDays(-15))
                     {
-                        WebClient webClient = new WebClient();
-                        webClient.DownloadFile($"{_config.OriginDirectory}/{item.Name}", $"{_config.DestDirectory}\\{item.Name}");
+                        if (!File.Exists($"{_config.DestDirectory}\\{item.Name}"))
+                        {
+                            WebClient webClient = new WebClient();
+                            webClient.DownloadFile($"{_config.OriginDirectory}/{item.Name}", $"{_config.DestDirectory}\\{item.Name}");
+                        }
                     }
                 }
 
