@@ -1,8 +1,10 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using HtmlAgilityPack;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Quartz;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -26,26 +28,43 @@ namespace Job.Download
         {
             try
             {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(_config.OriginDirectory);
-                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                _logger.LogInformation($"start downloading {DateTime.Now.ToString()}");
+
+                var web = new HtmlWeb();
+                var doc = web.Load(_config.OriginDirectory);
+                var nodes = doc.DocumentNode.SelectNodes("//table/tbody/tr");
+
+                var list = new List<TableDto>();
+
+                var rows = nodes.Select(tr => tr
+                    .Elements("td")
+                    .Select(td => td.InnerText.Trim())                    
+                    .ToArray());
+                foreach (var row in rows)
                 {
-                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    list.Add(new TableDto
+                    { 
+                        Name = row[0],
+                        Size = row[1],
+                        Modified = DateTime.Parse(row[2].Replace(" &#x2B;00:00", ""))
+                    });                    
+                }
+
+                if (!Directory.Exists(_config.DestDirectory))
+                {
+                    Directory.CreateDirectory(_config.DestDirectory);
+                }
+
+                foreach (var item in list)
+                {
+                    if(item.Modified > DateTime.Now.AddDays(-15))
                     {
-                        string html = reader.ReadToEnd();
+                        WebClient webClient = new WebClient();
+                        webClient.DownloadFile($"{_config.OriginDirectory}/{item.Name}", $"{_config.DestDirectory}\\{item.Name}");
                     }
                 }
 
-                _logger.LogInformation($"start downloading {DateTime.Now.ToString()}");
-
-                DirectoryInfo originDirectory = new DirectoryInfo(_config.OriginDirectory);
-
-                FileInfo[] originDirectoryFiles = originDirectory.GetFiles("*.bak");
-
-                foreach (FileInfo file in originDirectoryFiles)
-                {
-                    WebClient webClient = new WebClient();
-                    webClient.DownloadFile($"{_config.OriginDirectory}/{file.Name}", $"{_config.DestDirectory}\\{file.Name}");
-                }
+                _logger.LogInformation($"finish downloading {DateTime.Now.ToString()}");
             }
             catch (Exception e)
             {
@@ -54,5 +73,12 @@ namespace Job.Download
 
             return Task.CompletedTask;
         }
+    }
+
+    public class TableDto 
+    {
+        public string Name { get; set; }
+        public string Size { get; set; }
+        public DateTime Modified { get; set; }
     }
 }

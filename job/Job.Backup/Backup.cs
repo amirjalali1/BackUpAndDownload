@@ -35,34 +35,21 @@ namespace Job.Backup
 
                 foreach (FileInfo file in originDirectoryFiles)
                 {
-                    if (file.LastAccessTime > DateTime.Now.AddDays(-15))
+                    if (!Directory.Exists(_config.DestDirectory))
                     {
-                        if (!Directory.Exists(_config.DestDirectory))
-                        {
-                            Directory.CreateDirectory(_config.DestDirectory);
-                        }
-
-                        ///zip and save bak file in destination directory
-                        using (ZipFile zip = new ZipFile())
-                        {
-                            zip.Password = "123456!";
-                            zip.AddFile($"{file}");                           
-                            zip.Save($"{_config.DestDirectory}{file.Name.Replace("bak", "zip")}");
-                        }
-
-                        ///move zip file 
-                        //string fileToMove = _config.OriginDirectory + fileName;
-                        //string moveTo = _config.DestDirectory + fileName;
-                        //if (!Directory.Exists(_config.DestDirectory))
-                        //{
-                        //    Directory.CreateDirectory(_config.DestDirectory);
-                        //}
-                        //File.Move(fileToMove, moveTo);
-
-                        ///delete bak file
-                        file.Delete();
+                        Directory.CreateDirectory(_config.DestDirectory);
                     }
 
+                    ///zip and save bak file in destination directory
+                    using (ZipFile zip = new ZipFile())
+                    {
+                        zip.Password = _config.FilePassword;
+                        zip.AddFile($"{file}");
+                        zip.Save($"{_config.DestDirectory}{file.Name.Replace("bak", "zip")}");
+                    }
+
+                    ///delete bak file
+                    file.Delete();
                 }
                 _logger.LogInformation($"finish zip and  moving to other folder {DateTime.Now.ToString()}");
 
