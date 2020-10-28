@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
-using BD.WorkerService;
+using BackupAndDownload.WorkerService;
 
 namespace Job.Backup
 {

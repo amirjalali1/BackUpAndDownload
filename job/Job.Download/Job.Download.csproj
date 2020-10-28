@@ -15,6 +15,6 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\packages\WorkerService\BD.WorkerService.csproj" />
+    <ProjectReference Include="..\..\BackupAndDownload.packages\BackupAndDownload.WorkerService\BackupAndDownload.WorkerService.csproj" />
   </ItemGroup>
 </Project>
