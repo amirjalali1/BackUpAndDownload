@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "Job.Backup": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

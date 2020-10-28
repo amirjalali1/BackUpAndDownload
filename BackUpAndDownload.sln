@@ -5,7 +5,17 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5EBD3F81-0F56-4C7A-BE4A-0ECA3CF0B654}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwatServer", "src\SwatServer\SwatServer.csproj", "{EE4AB694-746F-47CA-ABB0-D053F48AEFFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwatServer", "src\SwatServer\SwatServer.csproj", "{EE4AB694-746F-47CA-ABB0-D053F48AEFFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packages", "packages", "{0CCE6D60-4091-4F11-83EE-67A3EDF77974}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService", "packages\WorkerService\WorkerService.csproj", "{37482359-4A16-4375-BC4F-B910EC33B424}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "job", "job", "{46C871AB-4117-4298-BBF1-9515523F3A1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Job.Backup", "job\Job.Backup\Job.Backup.csproj", "{DB3D3FE4-6530-4B61-BDD9-3ACB2AECF9A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Job.Download", "job\Job.Download\Job.Download.csproj", "{CB7BD4CA-CD8D-4AEB-BC7B-F352C128AB68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +27,27 @@ Global
 		{EE4AB694-746F-47CA-ABB0-D053F48AEFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE4AB694-746F-47CA-ABB0-D053F48AEFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE4AB694-746F-47CA-ABB0-D053F48AEFFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37482359-4A16-4375-BC4F-B910EC33B424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37482359-4A16-4375-BC4F-B910EC33B424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37482359-4A16-4375-BC4F-B910EC33B424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37482359-4A16-4375-BC4F-B910EC33B424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB3D3FE4-6530-4B61-BDD9-3ACB2AECF9A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3D3FE4-6530-4B61-BDD9-3ACB2AECF9A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3D3FE4-6530-4B61-BDD9-3ACB2AECF9A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3D3FE4-6530-4B61-BDD9-3ACB2AECF9A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB7BD4CA-CD8D-4AEB-BC7B-F352C128AB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB7BD4CA-CD8D-4AEB-BC7B-F352C128AB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB7BD4CA-CD8D-4AEB-BC7B-F352C128AB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB7BD4CA-CD8D-4AEB-BC7B-F352C128AB68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EE4AB694-746F-47CA-ABB0-D053F48AEFFF} = {5EBD3F81-0F56-4C7A-BE4A-0ECA3CF0B654}
+		{37482359-4A16-4375-BC4F-B910EC33B424} = {0CCE6D60-4091-4F11-83EE-67A3EDF77974}
+		{DB3D3FE4-6530-4B61-BDD9-3ACB2AECF9A2} = {46C871AB-4117-4298-BBF1-9515523F3A1D}
+		{CB7BD4CA-CD8D-4AEB-BC7B-F352C128AB68} = {46C871AB-4117-4298-BBF1-9515523F3A1D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9C6CD29-32C3-45C1-8B0B-EFB952BD1236}
