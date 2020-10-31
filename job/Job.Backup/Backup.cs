@@ -43,6 +43,7 @@ namespace Job.Backup
                     ///zip and save bak file in destination directory
                     using (ZipFile zip = new ZipFile())
                     {
+                        zip.CompressionLevel = Ionic.Zlib.CompressionLevel.None;
                         zip.Password = _config.FilePassword;
                         zip.AddFile($"{file}");
                         zip.Save($"{_config.DestDirectory}{file.Name.Replace("bak", "zip")}");
