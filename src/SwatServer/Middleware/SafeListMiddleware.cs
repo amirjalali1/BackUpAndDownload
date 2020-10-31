@@ -26,7 +26,7 @@ namespace SwatServer.Middleware
                 var remoteIp = context.Connection.RemoteIpAddress;
                 _logger.LogDebug($"Request from Remote IP address: {remoteIp}");
 
-                string[] ip = _safeIPList.Split(';');
+                string[] ip = _safeIpList.Split(';');
 
                 var bytes = remoteIp.GetAddressBytes();
                 var badIp = true;
