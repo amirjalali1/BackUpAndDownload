@@ -42,7 +42,7 @@ namespace SwatServer
             }
             app.UseStaticFiles();
 
-            app.UseMiddleware<SafeListMiddleware>(Configuration["SafeIpList"]);
+            app.UseMiddleware<SafeIpListMiddleware>(Configuration["SafeIpList"]);
 
             app.UseDirectoryBrowser(new DirectoryBrowserOptions
             {

@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace SwatServer.Middleware
 {
-    public class SafeListMiddleware
+    public class SafeIpListMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly ILogger<SafeListMiddleware> _logger;
+        private readonly ILogger<SafeIpListMiddleware> _logger;
         private readonly string _safeIpList;
 
-        public SafeListMiddleware(RequestDelegate next, ILogger<SafeListMiddleware> logger, string safeIpList)
+        public SafeIpListMiddleware(RequestDelegate next, ILogger<SafeIpListMiddleware> logger, string safeIpList)
         {
             _safeIpList = safeIpList;
             _next = next;
@@ -26,13 +26,13 @@ namespace SwatServer.Middleware
                 var remoteIp = context.Connection.RemoteIpAddress;
                 _logger.LogDebug($"Request from Remote IP address: {remoteIp}");
 
-                string[] ip = _safeIpList.Split(';');
+                string[] ipList = _safeIpList.Split(';');
 
                 var bytes = remoteIp.GetAddressBytes();
                 var badIp = true;
-                foreach (var address in ip)
+                foreach (var ip in ipList)
                 {
-                    var testIp = IPAddress.Parse(address);
+                    var testIp = IPAddress.Parse(ip);
                     if (testIp.GetAddressBytes().SequenceEqual(bytes))
                     {
                         badIp = false;
