@@ -12,11 +12,11 @@ namespace SwatServer.Middleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger<SafeListMiddleware> _logger;
-        private readonly string _safeList;
+        private readonly string _safeIpList;
 
-        public SafeListMiddleware(RequestDelegate next, ILogger<SafeListMiddleware> logger, string safeList)
+        public SafeListMiddleware(RequestDelegate next, ILogger<SafeListMiddleware> logger, string safeIpList)
         {
-            _safeList = safeList;
+            _safeIpList = safeIpList;
             _next = next;
             _logger = logger;
         }
@@ -26,7 +26,7 @@ namespace SwatServer.Middleware
                 var remoteIp = context.Connection.RemoteIpAddress;
                 _logger.LogDebug($"Request from Remote IP address: {remoteIp}");
 
-                string[] ip = _safeList.Split(';');
+                string[] ip = _safeIPList.Split(';');
 
                 var bytes = remoteIp.GetAddressBytes();
                 var badIp = true;
