@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using SwatServer.Middleware;
 
 namespace SwatServer
 {
@@ -40,6 +41,8 @@ namespace SwatServer
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
+
+            app.UseMiddleware<SafeListMiddleware>(Configuration["SafeList"]);
 
             app.UseDirectoryBrowser(new DirectoryBrowserOptions
             {
